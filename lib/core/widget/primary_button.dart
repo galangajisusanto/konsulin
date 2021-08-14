@@ -32,7 +32,7 @@ class PrimaryButton extends StatelessWidget {
           ? OutlinedButton.styleFrom(
               primary: enableSplashColor,
               backgroundColor: enableBackgroundColor,
-              padding: EdgeInsets.all(16),
+              padding: EdgeInsets.all(8),
               side: BorderSide(
                 width: 1.0,
                 color: enableBackgroundColor,
