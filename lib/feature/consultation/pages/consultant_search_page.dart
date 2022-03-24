@@ -4,7 +4,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hackathon_app/core/utils/style.dart';
 import 'package:hackathon_app/core/widget/consultant_card.dart';
 import 'package:hackathon_app/core/widget/search_bar.dart';
+import 'package:hackathon_app/feature/consultation/pages/consultation_chat_page.dart';
 import 'package:hackathon_app/feature/consultation/stores/consultant_data.dart';
+
+import 'consultant_recommendation_page.dart';
 
 class ConsultantSearchPage extends StatefulWidget {
   @override
@@ -53,7 +56,12 @@ class _ConsultantSearchPageState extends State<ConsultantSearchPage> {
                       consultant:
                           _consultantData.consultantRecommendation[index],
                       chatPressed: () {
-                        print('chat clicked');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  ConsultationChatPage()),
+                        );
                       },
                     );
                   }),

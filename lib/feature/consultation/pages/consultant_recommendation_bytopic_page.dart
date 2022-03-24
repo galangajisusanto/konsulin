@@ -4,6 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hackathon_app/core/utils/style.dart';
 import 'package:hackathon_app/core/widget/consultant_card.dart';
 import 'package:hackathon_app/feature/consultation/model/Topic.dart';
+import 'package:hackathon_app/feature/consultation/pages/consultation_chat_page.dart';
 import 'package:hackathon_app/feature/consultation/stores/consultant_data.dart';
 
 class ConsultantRecommendationByTopicPage extends StatefulWidget {
@@ -24,7 +25,9 @@ class _ConsultantRecommendationByTopicPageState
   @override
   void initState() {
     super.initState();
-    _consultantData.getConsultantRecommendationByTopic(topic: '');
+    _consultantData.getConsultantRecommendationByTopic(
+      topic: widget.topic.name,
+    );
   }
 
   @override
@@ -80,7 +83,12 @@ class _ConsultantRecommendationByTopicPageState
                             consultant:
                                 _consultantData.consultantRecommendation[index],
                             chatPressed: () {
-                              print('chat clicked');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ConsultationChatPage()),
+                              );
                             },
                           );
                         }),

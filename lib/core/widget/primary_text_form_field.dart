@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_app/core/utils/style.dart';
 
 class PrimaryTextFormField extends StatelessWidget {
   final bool obscureText;
@@ -36,10 +37,15 @@ class PrimaryTextFormField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
+        labelText: hintText,
         contentPadding: EdgeInsets.fromLTRB(0, 6, 6, 6),
         isDense: true,
         hintStyle: TextStyle(
           fontSize: 14,
+          color: hintTextColor,
+        ),
+        labelStyle: TextStyle(
+          fontSize: 12,
           color: hintTextColor,
         ),
         border: UnderlineInputBorder(

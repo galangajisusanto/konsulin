@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/core/utils/style.dart';
 import 'package:hackathon_app/core/widget/primary_button.dart';
+import 'package:hackathon_app/feature/profile/pages/topic_page.dart';
 
 import 'consultant_recommendation_bytopic_page.dart';
 
@@ -43,7 +44,7 @@ class GreetingDialog extends StatelessWidget {
         mainAxisSize: MainAxisSize.min, // To make the card compact
         children: <Widget>[
           Text(
-            "Selamat datang di \nHallo Apps!",
+            "Selamat datang di \nKonsulin!",
             style: Style.headline6,
             textAlign: TextAlign.center,
           ),
@@ -58,14 +59,12 @@ class GreetingDialog extends StatelessWidget {
             width: 114,
             child: PrimaryButton(
               title: 'Pilih Topik',
-              onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) =>
-                //         ConsultantRecommendationByTopicPage(topic: ''),
-                //   ),
-                // );
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TopicPage()),
+                );
+                Navigator.of(context).pop();
               },
               enableBackgroundColor: Style.primaryColor,
               enableTitleColor: Colors.white,

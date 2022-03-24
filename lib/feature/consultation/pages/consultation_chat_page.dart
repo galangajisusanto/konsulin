@@ -32,12 +32,8 @@ class _ConsultationChatPageState extends State<ConsultationChatPage> {
               url: Uri.parse(
                   "https://widget.chataja.co.id/?key=abe30eeb0995d2d051d5694d01fb29e8ed5876f5")),
           initialOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-              useShouldOverrideUrlLoading: true,
-              allowFileAccessFromFileURLs: true,
-              allowUniversalAccessFromFileURLs: true,
-              useOnLoadResource: true,
-            ),
+            crossPlatform:
+                InAppWebViewOptions(useShouldOverrideUrlLoading: true),
             ios: IOSInAppWebViewOptions(),
             android: AndroidInAppWebViewOptions(),
           ),

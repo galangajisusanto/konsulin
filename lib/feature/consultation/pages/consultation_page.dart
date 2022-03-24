@@ -9,6 +9,7 @@ import 'package:hackathon_app/feature/consultation/model/Topic.dart';
 import 'package:hackathon_app/feature/consultation/pages/consultant_recommendation_bytopic_page.dart';
 import 'package:hackathon_app/feature/consultation/pages/consultant_recommendation_page.dart';
 import 'package:hackathon_app/feature/consultation/pages/consultant_search_page.dart';
+import 'package:hackathon_app/feature/consultation/pages/consultation_chat_page.dart';
 import 'package:hackathon_app/feature/consultation/pages/greeting_dialog.dart';
 import 'package:hackathon_app/feature/consultation/pages/topic_dialog.dart';
 import 'package:hackathon_app/feature/consultation/stores/consultant_data.dart';
@@ -46,7 +47,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Hallo Apps!',
+          'Konsulin',
           style: Style.headline6.apply(color: Style.primaryColor),
         ),
         actions: [
@@ -133,6 +134,14 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 consultant: _consultantData
                                     .consultantRecommendation[index],
                                 chatPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          ConsultationChatPage(),
+                                    ),
+                                  );
+
                                   print('chat clicked');
                                 },
                               );
@@ -256,32 +265,3 @@ class _ConsultationPageState extends State<ConsultationPage> {
     );
   }
 }
-
-// Container(
-//   child: Center(
-//     child: OutlinedButton(
-//       onPressed: () {
-//         // Navigator.push(
-//         //   context,
-//         //   MaterialPageRoute(
-//         //     builder: (context) => ConsultationChatPage(),
-//         //   ),
-//         // );
-//
-//         widget.browser.openUrlRequest(
-//             urlRequest: URLRequest(
-//                 url: Uri.parse(
-//                     "https://widget.chataja.co.id/?key=abe30eeb0995d2d051d5694d01fb29e8ed5876f5")),
-//             options: InAppBrowserClassOptions(
-//                 inAppWebViewGroupOptions: InAppWebViewGroupOptions(
-//                     crossPlatform: InAppWebViewOptions(
-//               useShouldOverrideUrlLoading: true,
-//               useOnLoadResource: true,
-//             ))));
-//       },
-//       child: Text(
-//         'konsultasi',
-//       ),
-//     ),
-//   ),
-// ),
