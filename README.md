@@ -18,6 +18,6 @@ Konsulin is a mobile app built with Flutter to help SME to connect with our mark
 - in App Web View for Vutura-ChatAJa
 
 
-![App Display](https://github.com/galangajisusanto/Wheater-App/blob/master/Video/app_display.gif)
+![App Display](https://github.com/galangajisusanto/konsulin/blob/master/image/konsulin_image.png)
 
 
